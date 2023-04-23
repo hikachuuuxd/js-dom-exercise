@@ -15,7 +15,13 @@ function rgb(){
     const green = range[1].value
     const blue = range[2].value
     
-    body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    body.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`
     
 }
 
+document.body.addEventListener('mousemove', function(e){
+    const x = Math.round(e.clientX / window.innerWidth * 100)
+    const y = Math.round(e.clientY / window.innerHeight * 100)
+    body.style.backgroundColor = `rgb(${x}, ${y}, 100)`
+   
+})
