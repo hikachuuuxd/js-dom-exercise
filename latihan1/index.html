@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container{
+            margin-top: 3%;
+        }
+        button{
+            padding: 10px;
+            margin-top: 10px;
+        }
+        input{
+            width: 25%;
+        }
+        input[type="text"]{
+            padding : 5px
+        }
+
+        .kotak{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+        }
+
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+    <title>Warna</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="warna" id="warna" placeholder="masukkan kode atau nama warna"><br>
+        <button>Ubah Warna</button>
+    </div>
+    <div class="container ">
+        <div class="kotak red"></div><br>
+        <input type="range" name="red" id="red" min="0" max="255">
+    </div>
+    <div class="container ">
+        <div class="kotak green"></div><br>
+        <input type="range" name="green" id="green" min="0" max="255">
+    </div>
+    <div class="container ">
+        <div class="kotak blue"></div><br>
+        <input type="range" name="blue" id="blue" min="0" max="255">
+    </div>
+
+<script src="latihan1.js"></script>
+</body>
+</html>
