@@ -1,37 +1,62 @@
 
 const button = document.getElementById('target-button')
-const target = document.getElementById('target')
+const target = document.querySelector('#target')
+const text = document.querySelector('#target p')
+console.log(target)
 let select = document.getElementsByTagName('select')[0]
 let input = document.getElementById('target-input')
 
+select.addEventListener('input', function()
+{
+    if(select.value == 'bg')
+    {
+        button.addEventListener('click', function()
+        {
+            target.style.background = input.value
+        })
 
-    select.addEventListener('input', function(){
-        if(select.value == 'color')
+    }
+    else if(select.value == 'font-color')
+    {
+        button.addEventListener('click', function()
         {
-            target.style.backgroundColor = input.value
-        }
-        else if(select.value == 'font-color')
+            text.style.color = input.value
+        })
+    }
+    else if(select.value == 'font-size')
+    {
+        button.addEventListener('click', function()
         {
-            target.style.color = input.value
-        }
-        else if(select.value == 'font-size')
+             target.style.fontSize = input.value
+        })
+    }
+    else if(select.value == 'font')
+    {
+        button.addEventListener('click', function()
         {
-            target.style.fontSize = input
-        }
-        else if(select.value == 'font')
+             target.style.fontFamily = input.value
+        })
+    }
+    else if(select.value == 'width')
+    {
+        button.addEventListener('click', function()
         {
-            target.style.fontFamily = input.value
-        }
-        else if(select.value == 'width')
+             target.style.width = input.value
+        })
+    }
+    else if(select.value == 'height')
+    {
+        button.addEventListener('click', function()
         {
-            target.style.width = input.value
-        }
-        else if(select.value == 'height')
-        {
-            target.style.height = input.value
-        }
-        else
-        {
-            alert('ini tidak masuk dalam pilihan')
-        }
-    })
+             target.style.height = input.value
+        })
+    }
+    else
+    {
+        console.log('anda belum memasukkan pilihan')
+    }
+
+})
+
+
+        
