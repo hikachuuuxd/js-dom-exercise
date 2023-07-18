@@ -24,7 +24,14 @@
             grid-auto-columns: calc((100% / 3 ) - 12px);
             gap: 16px;
             overflow: hidden;
+            cursor: pointer;
         }
+
+        .slider.slide .card{
+            cursor: grab;
+            user-select: none;
+        }
+
         .slider-container{
             max-width: calc(100vw - 150px);
             width: 60%;
@@ -42,6 +49,7 @@
             overflow: hidden;
             width: auto;
             background-color: white;
+            
         }
 
         .card > .card-header{
@@ -110,7 +118,7 @@
 <body>
 <div class="container">
     <div class="slider-container">
-        <ul class="slider">
+        <ul class="slider slide">
             <li class="card">
                 <div class="card-header">
                     <div class="img"></div>
@@ -140,10 +148,6 @@
 </div>
         
      
-
-
-
-   
-
+<script src="script.js"></script>
 </body>
 </html>
