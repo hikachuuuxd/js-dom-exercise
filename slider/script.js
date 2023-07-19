@@ -4,6 +4,14 @@ const arrows = document.querySelectorAll('.slider-container a');
 const firstCard = document.querySelector('.card').offsetWidth;
 const sliderChild = [...slider.children];
 
+let isSlide = false, startX, startScrollLeft, timeoutId;
+
+const autoPlay = () => {
+   
+    timeoutId = setTimeout(() => slider.scrollLeft += firstCard, 2500)
+}
+autoPlay();
+
 let cardPreview = Math.round(slider.offsetWidth / firstCard);
 
 sliderChild.slice(-cardPreview).reverse().forEach(card => {
@@ -18,8 +26,6 @@ arrows.forEach( arrow => {
         slider.scrollLeft += arrow.id === 'left' ? -firstCard : firstCard
     })
 })
-
-let isSlide = false, startX, startScrollLeft, timeoutId;
 
 
 const slideStart = (e) => {
@@ -38,11 +44,7 @@ const slide = (e) => {
     slider.scrollLeft = startScrollLeft - (e.pageX - startX)
 }
 
-const autoPlay = () => {
-   
-    timeoutId = setTimeout(() => slider.scrollLeft += -firstCard, 2500)
-}
-autoPlay();
+
 
 const infiniteScroll = () =>{
     if(slider.scrollLeft === 0){
