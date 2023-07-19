@@ -23,10 +23,25 @@
             grid-auto-flow: column;
             grid-auto-columns: calc((100% / 3 ) - 12px);
             gap: 16px;
-            overflow: hidden;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
             cursor: pointer;
+            scroll-behavior: smooth;
+            scrollbar-width: 0;
         }
 
+        .slider::-webkit-scrollbar{
+            display: none;
+        }
+
+        .slider.no-animation{
+            scroll-behavior: auto;
+        }
+
+        .slider.slide{
+            scroll-behavior: auto;
+            scroll-snap-type: none;
+        }
         .slider.slide .card{
             cursor: grab;
             user-select: none;
@@ -49,6 +64,7 @@
             overflow: hidden;
             width: auto;
             background-color: white;
+            scroll-snap-align: center;
             
         }
 
@@ -87,6 +103,7 @@
             text-align: center;
             z-index: 99;
             color: salmon;
+            user-select: none;
         
 
         }
@@ -141,9 +158,13 @@
                 <div class="card-header"><div class="img"></div></div>
                 <div class="card-content">Card 5</div>
             </li>
+            <li class="card">
+                <div class="card-header"><div class="img"></div></div>
+                <div class="card-content">Card 6</div>
+            </li>
         </ul>
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
+        <a class="arrow prev" id="left">&#10094;</a>
+        <a class="arrow next" id="right">&#10095;</a>
     </div>
 </div>
         
