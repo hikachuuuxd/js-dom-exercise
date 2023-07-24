@@ -3,12 +3,12 @@ import './App.css';
 import Navbar from './components/Navbar'; 
 import Dropdown from './components/Dropdown';
 import Square from './tictactoe/Square';
-import Board from './tictactoe/Board';
+import Game from './tictactoe/Board';
 
 function App() {
   return (
     <div >
-      <Board />
+      <Game />
     </div>
   );
 }

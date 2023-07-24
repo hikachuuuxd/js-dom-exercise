@@ -3,11 +3,9 @@
 .square{
     width: 50px;
     height: 50px;
-    box-sizing: content-box;
-    border-style: none;
-    background: none;
     border: 1px solid black;
     cursor: pointer;
+    text-align: center;
 }
 
 
