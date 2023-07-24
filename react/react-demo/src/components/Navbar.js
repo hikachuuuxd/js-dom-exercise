@@ -12,9 +12,10 @@ const Navbar = () => {
     const openDropdown = (id) => { 
             setDropdown(!dropdown)
             getId(id)
-            console.log('d')
+            console.log(dropdown)
          
         };
+  
 
 
     return(
@@ -26,8 +27,8 @@ const Navbar = () => {
                    
                    <li key={index} >{menu.sub ? (<> 
                    
-                   <button onClick={() => openDropdown(menu.id)} >{menu.menu}</button> <Dropdown id={id} open={ dropdown} menu={ menu } /> 
-                   </>) : <button >{menu.menu}</button>  }
+                   <a onMouseOver={() => openDropdown(menu.id) } onMouseLeave={() => openDropdown(menu.id)} >{menu.menu}</a> <Dropdown id={id} open={ dropdown} menu={ menu } /> 
+                   </>) : <a >{menu.menu}</a>  }
                    
                    </li>)
                     

@@ -1,9 +1,9 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     color: white;
-}
+} */
 .navbar{
     width: 100vw;
     padding: 10px;
@@ -22,11 +22,7 @@
     position: relative;
 }
 
-.navbar > ul > li {
+.navbar > ul > li > a {
     cursor: pointer;
 }
 
-button{
-    background: none;
-    border-style: none;
-}
