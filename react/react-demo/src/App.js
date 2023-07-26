@@ -1,14 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/Navbar'; 
-import Dropdown from './components/Dropdown';
-import Square from './tictactoe/Square';
-import Game from './tictactoe/Board';
+import Produk from "./thinking-in-react/Produk";
 
 function App() {
   return (
     <div >
-      <Game />
+      <Produk />
     </div>
   );
 }
