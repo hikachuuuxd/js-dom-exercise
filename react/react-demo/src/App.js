@@ -1,9 +1,9 @@
-import Produk from "./thinking-in-react/Produk";
+import Staf from "./latihan/Staf";
 
 function App() {
   return (
     <div >
-      <Produk />
+      <Staf />
     </div>
   );
 }
