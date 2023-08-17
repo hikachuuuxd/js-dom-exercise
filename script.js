@@ -214,4 +214,176 @@ var summation = function (num) {
 
   return result;
 }
-console.log(summation(8))
+
+function getAboveThreshold(numbers, threshold) {
+    return numbers.filter(e => e >= threshold)
+}
+
+function findMaxSecondNumber(numbers) {
+    let number =  numbers.sort((a,b) => b - a)
+    return number[1]
+}
+
+
+function accum(s) {
+  let huruf = s.split('').reverse()
+let arr = []
+let result = []
+for(let i = 0; i < s.length; i++){
+    for(let j = i + 1; j <= s.length; j++){
+       arr.push(huruf[i])
+    }
+    
+}
+
+for(let i = 0; i < arr.length; i++){
+  arr[i] == arr[i + 1] ? result.push(arr[i].toLowerCase()) : result.push(arr[i].toUpperCase())
+
+}
+
+return result.reverse().join('')
+
+}
+
+
+
+function solution(str){
+  return str.split('').reverse().join('')
+}
+
+class SmallestIntegerFinder {
+
+  findSmallestInt(args) {
+    const small =  args.sort((a, b) => a - b ) 
+    return small[0]
+  }
+}
+
+function findShort(s){
+  let words = s.split(' ').map(e => e.length).sort((a, b) => a - b)
+  return words[0]
+}
+
+function simpleMultiplication(number) {
+  return number % 2 == 0 ? number * 8 : number * 9
+}
+
+function SeriesSum(n)
+{
+  if(n == 0) return '0.00'
+  let start = 1
+  for(let i = 1; i < n; i++){
+    start += 1/(1+3*i)
+  }
+  return start.toFixed(2)
+}     
+
+function positiveSum(arr) {
+  let sum = 0
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] < 0){
+      sum
+    }else{
+       sum += arr[i]
+    }
+  }
+  return sum;
+}
+
+function bmi(weight, height) {
+  /*
+  calculate
+  bmi = weight / height2
+
+  rules
+  if bmi <= 18.5 return "Underweight"
+  0 - 18
+  if bmi <= 25.0 return "Normal"
+  19 - 25
+  if bmi <= 30.0 return "Overweight"
+  26 - 30
+  if bmi > 30 return "Obese
+  31 - 100
+  */
+  const total = weight / (height * height);
+  let result;
+  if(total <= 18.5){
+    result = "Underweight"
+  }else if(total <= 25.0 && total > 18.5){
+    result = "Normal"
+  }else if(total <= 30.0 && total > 25.0 ){
+    result = "Overweight"
+  }else{
+    result = "Obese"
+  }
+  return result;
+}
+
+function oddOrEven(array) {
+  if(array.length == 0) return "even"
+  const num = array.reduce((index, val) => index + val)
+  return num % 2 == 0 ? "even" : "odd"
+}
+
+var countSheep = function (num){
+  let sheep = ' sheep...'
+  let result = ''
+  for(let i = 1; i <= num; i++){
+    result += i + sheep
+  }
+  return result
+}
+
+function likes(names) {
+  let rs;
+  if(names.length == 0){
+    rs = "no one likes this"
+  }else if(names.length == 1){
+    rs = names.join('') + " likes this"
+  }else if(names.length == 2){
+    rs = `${names[0]} and ${names[1]} like this`
+  }else if(names.length == 3){
+    rs = `${names[0]}, ${names[1]} and ${names[2]} like this`
+  }else{
+    rs = `${names[0]}, ${names[1]} and ${names.length - 2} others like this`
+  }
+}
+
+function getCount(str) {
+  return str.split('').filter(e => e == 'a' || e == 'i' || e == 'u' || e == 'e' || e == 'o').length
+}
+
+function makeNegative(num) {
+  return num == 0 || num < 0 ? num : -num
+}
+
+function high(x){
+  const words = x.split(' ');
+  const num = Array(words.length).fill(0);
+  for (let i = 0; i < words.length; ++i) {
+    const word = words[i];
+    for (let j = 0; j < word.length; ++j) {
+      num[i] += word.charCodeAt(j) - 96;
+    }
+  }
+  const nums = num.slice()
+  const high = nums.sort((a, b) => b - a)
+  const index = num.indexOf(high[0])
+  return words[index];
+}
+
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return distanceToPump <= mpg * fuelLeft ? true : false
+};
+
+function reverseWords(str) {
+  let words = str.split('').reverse().join('')
+  return words.split(' ').reverse().join(' ');
+}
+
+function disemvowel(str) {
+  return str.split('').filter(e => e != 'a' && e != 'A' && e != 'i' && e != 'I' && e != 'u' && e != 'U' && e != 'e' && e != 'E' && e != 'o'&& e != 'O').join('');
+// with regex
+//   return str.replace(/[aeiou]/gi, '');
+}
+console.log(disemvowel('Raku suka kaMu aaa Oh '))
