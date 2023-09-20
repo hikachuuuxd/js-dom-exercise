@@ -386,4 +386,74 @@ function disemvowel(str) {
 // with regex
 //   return str.replace(/[aeiou]/gi, '');
 }
-console.log(disemvowel('Raku suka kaMu aaa Oh '))
+function alphabetPosition(text) {
+  const words = text.toLowerCase().replace(/[^a-z]/gi, '').split('');
+  const num = Array(words.length).fill(0);
+  for (let i = 0; i < words.length; ++i) {
+    const word = words[i];
+    for (let j = 0; j < word.length; ++j) {
+      num[i] = word.charCodeAt(j) - 96;
+    }
+  }
+  return words
+}
+
+function DNAStrand(dna){
+  /*
+    A = T
+    T = A
+    G = C
+    C = G
+  */
+
+ let word = dna.split('')
+ return word.map(e => {
+  if(e == "A"){
+    return e = "T"
+  }else if(e == "T"){
+    return e = "A"
+  }else if(e == "G"){
+    return e = "C"
+  }else if(e == "C"){
+    return e = "G"
+  }
+ 
+ }).join('')
+
+ // use regex
+ /*
+ return dna.replace(/./g, function(c) {
+    return DNAStrand.pairs[c]
+  })
+}
+
+DNAStrand.pairs = {
+  A: 'T',
+  T: 'A',
+  C: 'G',
+  G: 'C',
+ */
+}
+
+function sumTwoSmallestNumbers(numbers) {  
+  return numbers.sort((a,b) => a - b).slice(0, 2).reduce((curr, val) => curr + val)
+}
+
+function opposite(number) {
+  return number >= 0 ? -number : -number 
+}
+
+function towerBuilder(floors) {
+  let space,star, tower = []; 
+  for (i = 1; i <= floors; i++)
+  {
+   space = " ".repeat(floors - i); 
+   star = "*".repeat ((2*i) - 1); 
+   tower.push(`${space}${star}${space}`); 
+  } 
+return tower; 
+
+}
+
+console.log(towerBuilder(3))
+
