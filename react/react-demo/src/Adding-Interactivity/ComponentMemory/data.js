@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-const datas = [{
+export const data = [{
     name: 'Homenaje a la Neurocirugía',
     artist: 'Marta Colvin Andrade',
     description: 'Although Colvin is predominantly known for abstract themes that allude to pre-Hispanic symbols, this gigantic sculpture, an homage to neurosurgery, is one of her most recognizable public art pieces.',
@@ -73,28 +71,3 @@ const datas = [{
     url: 'https://i.imgur.com/6o5Vuyu.jpg',
     alt: 'A group of bronze hippo sculptures emerging from the sett sidewalk as if they were swimming.'
   }];
-  
-function Button({event, disabled, children}){
-    return <button disabled={disabled} onClick={event} style={{cursor: 'pointer'}}>{children}</button>
-}
-
-export default function Article(){
-    const [index, setIndex] = useState(0);
-    const [show, setShow] = useState(false)
-    const data = datas[index];
-    const nextIndex = () => setIndex(index + 1); 
-    const prevIndex = () => setIndex(index  - 1);
-
-    return (
-        <>
-            <Button event={prevIndex} disabled={index == 0} >prev</Button>
-            <Button event={nextIndex} disabled={index >= datas.length - 1} >next </Button>
-            
-            <h5>{index + 1}/{datas.length}</h5>
-            <h1>{data.name} by {data.artist}</h1>
-
-            <Button event={() => setShow(!show)}>{show ? 'hide detail' : 'show detail'}</Button>
-            <p>{show && data.description}</p>
-        </>
-    )
-  }
