@@ -42,3 +42,32 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.wrapper{
+  width: 250px;
+  padding: 10px;
+  background-color: slategray;
+  color: white;
+}
+.title{
+  text-align: center;
+}
+.header{
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+img{
+  width: 250px;
+}
+
+
